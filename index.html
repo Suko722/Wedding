@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=no,email=no,address=no" />
+
+  <!-- 分享卡片基础信息（微信主要看链接页面 + 缩略图由平台抓取，最稳还是配合微信JSSDK；minimal先这样） -->
+  <title>Shuke & Yang | 婚礼邀请</title>
+  <meta name="description" content="诚挚邀请您参加我们的婚礼。点击查看请柬详情" />
+  <meta property="og:title" content="Shuke & Yang | 婚礼邀请" />
+  <meta property="og:description" content="诚挚邀请您参加我们的婚礼。点击查看请柬详情" />
+  <meta property="og:image" content="./assets/share.jpg" />
+
+  <!-- Swiper (CDN) - 用来做竖向翻页 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <!-- 顶部音乐按钮 -->
+  <button id="musicBtn" class="music-btn" aria-label="播放背景音乐">
+    <span id="musicIcon">▶</span>
+    <span class="music-text">Music</span>
+  </button>
+
+  <!-- 背景音乐 -->
+  <audio id="bgm" preload="auto" loop>
+    <source src="./assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Swiper 容器 -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+
+      <!-- Page 1: 封面 -->
+      <section class="swiper-slide slide cover" style="background-image:url('./assets/cover.jpg')">
+        <div class="overlay"></div>
+        <div class="content fade-in">
+          <div class="tag">Wedding Invitation</div>
+          <h1>Shuke & Yang</h1>
+          <p class="sub">诚挚邀请您见证我们的重要时刻</p>
+          <div class="hint">上滑查看 ↓</div>
+        </div>
+      </section>
+
+      <!-- Page 2: 时间地点 -->
+      <section class="swiper-slide slide">
+        <div class="content fade-in">
+          <h2>婚礼信息</h2>
+          <div class="card">
+            <div class="row">
+              <span class="label">日期</span>
+              <span class="value">2026-xx-xx（周x）</span>
+            </div>
+            <div class="row">
+              <span class="label">时间</span>
+              <span class="value">18:00 入场｜18:30 开始</span>
+            </div>
+            <div class="row">
+              <span class="label">地点</span>
+              <span class="value">xx酒店 xx厅（城市）</span>
+            </div>
+          </div>
+
+          <!-- 地图按钮：高德/腾讯地图都可以 -->
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://uri.amap.com/marker?position=116.397128,39.916527&name=婚礼地点">
+            一键导航（高德地图）
+          </a>
+
+          <p class="note">（提示：如果你用的是腾讯地图，也可以换成腾讯的地点链接）</p>
+        </div>
+      </section>
+
+      <!-- Page 3: 我们的照片 -->
+      <section class="swiper-slide slide">
+        <div class="content fade-in">
+          <h2>我们的照片</h2>
+
+          <div class="photo-grid">
+            <img src="./assets/photo1.jpg" alt="photo1" loading="lazy" />
+            <img src="./assets/photo2.jpg" alt="photo2" loading="lazy" />
+          </div>
+
+          <p class="note">你可以继续加更多照片，或改成轮播。</p>
+        </div>
+      </section>
+
+      <!-- Page 4: RSVP -->
+      <section class="swiper-slide slide">
+        <div class="content fade-in">
+          <h2>宾客回执</h2>
+          <p class="sub">minimal 版本建议：跳转到腾讯问卷/飞书表单（免后端）</p>
+
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://wj.qq.com/">
+            打开回执表单（示例：腾讯问卷）
+          </a>
+
+          <div class="card small">
+            <p class="muted">
+              如果你之后想做“页面内直接提交”，也可以接入第三方表单的 iframe/或用 Google Form（国内可能不稳定）。
+            </p>
+          </div>
+
+          <div class="footer">
+            <p>期待与您相见 ❤️</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 右侧小圆点 -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
